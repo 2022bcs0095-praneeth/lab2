@@ -15,7 +15,8 @@ pipeline {
                 echo "Name: P Sai Praneeth Kumar"
                 echo "Roll No: 2022BCS0095"
                 echo "=================================="
-                python3 train.py
+                docker build -t temp-train-image .
+                docker run --rm temp-train-image python3 train.py
                 '''
             }
         }
