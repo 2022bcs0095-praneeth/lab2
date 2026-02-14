@@ -8,6 +8,12 @@ pipeline {
 
     stages {
 
+        stage('Install Dependencies') {
+            steps {
+                sh 'pip3 install -r requirements.txt --break-system-packages'
+            }
+        }
+
         stage('Train Model & Print Metrics') {
             steps {
                 sh '''
@@ -15,8 +21,7 @@ pipeline {
                 echo "Name: P Sai Praneeth Kumar"
                 echo "Roll No: 2022BCS0095"
                 echo "=================================="
-                docker build -t temp-train-image .
-                docker run --rm temp-train-image python3 train.py
+                python3 train.py
                 '''
             }
         }
