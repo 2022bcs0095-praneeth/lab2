@@ -8,17 +8,11 @@ pipeline {
 
     stages {
 
-        stage('Install Dependencies') {
-            steps {
-                sh 'pip3 install -r requirements.txt --break-system-packages'
-            }
-        }
-
         stage('Train Model & Print Metrics') {
             steps {
                 sh '''
                 echo "=================================="
-                echo "Name: P SAI PRANEETH KUMAR"
+                echo "Name: P Sai Praneeth Kumar"
                 echo "Roll No: 2022BCS0095"
                 echo "=================================="
                 python3 train.py
